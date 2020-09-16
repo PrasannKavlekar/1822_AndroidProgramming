@@ -1,9 +1,0 @@
-
-# Whitelist some files
-!.gitignore
-!README.md
-!.java
-!.kt
-!.xml
-!.gradle
-
