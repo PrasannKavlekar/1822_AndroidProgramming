@@ -1,5 +1,5 @@
 #Blacklist files/Calculator2 in same directory as the .gitignore file
-/*
+#/*
 
 # Whitelist some files
 !.gitignore
