@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +15,8 @@ import java.lang.reflect.Method;
 public class MainActivity extends AppCompatActivity {
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnMod, btnMul, btnDiv, btnAdd, btnSub, btnEqual, btnAC, btnCLR, btnDot;
     EditText ed1;
-    float res1, res2;
+    float res1=0, res2=0;
+    boolean decimal;
     String func;
 
     @Override
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         btnEqual=(Button)findViewById(R.id.btnEqual);
         btnCLR=(Button)findViewById(R.id.btnCLR);
         btnAC=(Button)findViewById(R.id.btnAC);
+        btnDot=(Button)findViewById(R.id.btnDot);
         ed1=(EditText)findViewById(R.id.editNum);
 
         //ButtonInputs
@@ -113,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     res1=Float.parseFloat(ed1.getText() + "");
                     func="Add";
+                    decimal=false;
                     ed1.setText(null);
                 }
             }
@@ -126,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     res1=Float.parseFloat(ed1.getText() + "");
                     func="Sub";
+                    decimal=false;
                     ed1.setText(null);
                 }
             }
@@ -139,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     res1=Float.parseFloat(ed1.getText() + "");
                     func="Mul";
+                    decimal=false;
                     ed1.setText(null);
                 }
             }
@@ -152,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     res1=Float.parseFloat(ed1.getText() + "");
                     func="Div";
+                    decimal=false;
                     ed1.setText(null);
                 }
             }
@@ -165,8 +172,21 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     res1=Float.parseFloat(ed1.getText() + "");
                     func="Mod";
+                    decimal=false;
                     ed1.setText(null);
                 }
+            }
+        });
+        btnDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (decimal) {
+                    //do nothing or you can show the error
+                } else {
+                    ed1.setText(ed1.getText() + ".");
+                    decimal = true;
+                }
+
             }
         });
         btnEqual.setOnClickListener(new View.OnClickListener() {
@@ -194,8 +214,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ed1.setText("");
+                res1=0;
+                res2=0;
             }
         });
 
+        btnCLR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String digit = (String.valueOf(ed1.getText()));
+                if ((digit != null) && (digit.length() > 0)) {
+                    String ldigit = digit.substring(0, digit.length() - 1);
+                    ed1.setText(ldigit);
+                }
+
+            }
+        });
     }
 }
