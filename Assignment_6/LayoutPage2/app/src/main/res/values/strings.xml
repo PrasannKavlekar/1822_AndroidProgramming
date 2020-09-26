@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="gender">Gender:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
+    <string name="state">State: </string>
+</resources>
