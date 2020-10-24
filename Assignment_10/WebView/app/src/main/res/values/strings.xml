@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WebView</string>
+    <string name="reload">RELOAD</string>
+    <string name="refresh">REFRESH</string>
+</resources>
