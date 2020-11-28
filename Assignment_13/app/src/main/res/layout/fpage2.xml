@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fpage2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frag_Page2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="0dp"
+            android:layout_height="729dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernamebar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="107dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:drawableStart="@drawable/ic_baseline_person_24"
+                    android:text="@string/gender"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:drawableTint="#FFFFFF" />
+
+                <RadioGroup
+                    android:id="@+id/gradio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:checkedButton="@+id/malebtn"
+
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/malebtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/male"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/femalebtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/female"
+                        android:textColor="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/otherbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/others"
+                        android:textColor="#FFFFFF" />
+                </RadioGroup>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/statelbl"
+                    android:layout_width="86dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:drawableStart="@drawable/ic_baseline_location_on_24"
+                    android:text="@string/state"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:drawableTint="@android:color/background_light" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/stb"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:background="#EF9A9A"
+                        android:enabled="false"
+                        android:inputType="none"
+                        tools:text="@tools:sample/cities" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/districtlbl"
+                    android:layout_width="107dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:drawableStart="@drawable/ic_baseline_location_on_24"
+                    android:text="@string/district"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:drawableTint="#FFFFFF" />
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/dtb"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    app:ms_background_color="#EF9A9A" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/bdaylbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:drawableStart="@drawable/ic_baseline_cake_24"
+                    android:text="@string/birthday"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:drawableTint="#FFFFFFFF" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/btb"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="#EF9A9A"
+                        android:drawableEnd="@drawable/ic_baseline_date_range_24"
+                        android:shadowColor="#000000"
+                        tools:text="@tools:sample/date/ddmmyy" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/usernamebar"
+            style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="56dp"
+            android:background="@color/design_default_color_on_secondary"
+            android:theme="@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Username Here"
+            app:titleMarginStart="140dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E57373">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#E57373"
+            app:menu="@menu/menu"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            app:title="@string/app_name" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</FrameLayout>
